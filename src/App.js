@@ -2,6 +2,7 @@ import Weather from './Component/Weather';
 import './App.css';
 
 import QRgenrator from './Component/QRgenrator';
+import TextTovoice from './Component/TextTovoice';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
 <Weather/>
 
 <QRgenrator/>
+<TextTovoice/>
      
     </div>
   );
