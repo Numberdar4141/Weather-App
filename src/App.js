@@ -5,6 +5,7 @@ import QRgenrator from './Component/QRgenrator';
 import TextTovoice from './Component/TextTovoice';
 import Dragdrop4 from './Component/Dragdrop4';
 import Ranpasword from './Component/Ranpasword';
+import PassStreng from './Component/PassStreng';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
 <TextTovoice/>
 <Dragdrop4/>
 <Ranpasword/>
+<PassStreng/>
      
     </div>
   );
