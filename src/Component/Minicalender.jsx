@@ -1,45 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 
 const Minicalender = () => {
-    const date = document.getElementById("date");
-    const day = document.getElementById("day");
-    const month = document.getElementById("month");
-    const year = document.getElementById("year");
+    const [currentDate, setCurrentDate] = useState(new Date());
 
-    const today = new Date();
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentDate(new Date());
+        }, 1000); // Update every second
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, []); // Empty dependency array means this effect runs once after initial render
 
-    const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thrusday","Friday","Saturday"];
-    const allmonths = [
+    const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const allMonths = [
         "January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
-      ];
+    ];
 
-    date.innerHTML =(today.getDate()<10?"0":"")+ today.getDate();
-    day.innerHTML = weekdays[today.getDay()];
-    month.innerHTML = allmonths[today.getMonth()];
-    year.innerHTML = today.getFullYear();
-
-   
-
-
-  return (
-    <div>
-      <div className='bg-purple-700 flex justify-center flex-col items-center h-screen'>
-        <div className=' text-[30px] font-semibold text-white m-[10px]'>Mini Calender📆</div>
-        <div className=' flex  w-[300px]  font-semibold rounded-2xl h-[250px] bg-white  items-center'>
-            <div className='w-[58%] flex  flex-col items-center justify-center text-[25px] h-[100%]'>
-                <p className='text-[80px] ' id="date">01</p>
-                <p id='day'>Sunday</p>
-            </div>
-            <div className='w-[42%] flex rounded-tr-2xl  flex-col rounded-br-2xl text-white items-center justify-center bg-orange-500 text-[25px] h-[100%]'>
-                <p id='month'>Jan</p>
-                <p id='year'>2024</p>
+    return (
+        <div>
+            <div className='bg-purple-700 flex justify-center flex-col items-center h-screen'>
+                <div className=' text-[30px] font-semibold text-white m-[10px]'>Mini Calendar📆</div>
+                <div className='flex w-[300px] font-semibold rounded-2xl h-[250px] bg-white items-center'>
+                    <div className='w-[58%] flex flex-col items-center justify-center text-[25px] h-[100%]'>
+                        <p className='text-[80px]'>{currentDate.getDate()}</p>
+                        <p>{weekdays[currentDate.getDay()]}</p>
+                    </div>
+                    <div className='w-[42%] flex rounded-tr-2xl flex-col rounded-br-2xl text-white items-center justify-center bg-orange-500 text-[25px] h-[100%]'>
+                        <p>{allMonths[currentDate.getMonth()]}</p>
+                        <p>{currentDate.getFullYear()}</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-      </div>
-    </div>
-  )
+    );
 }
 
-export default Minicalender
+export default Minicalender;
