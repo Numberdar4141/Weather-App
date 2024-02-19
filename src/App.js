@@ -8,13 +8,13 @@ import Ranpasword from './Component/Ranpasword';
 import PassStreng from './Component/PassStreng';
 import Minicalender from './Component/Minicalender';
 import Notfiy from './Component/Notfiy';
+import Popupnotif from './Component/Popupnotif';
 
 function App() {
 
   return (
     <div className="App">
 <Weather/>
-
 <QRgenrator/>
 <TextTovoice/>
 <Dragdrop4/>
@@ -22,6 +22,7 @@ function App() {
 <PassStreng/>
 <Minicalender/>
 <Notfiy/>
+<Popupnotif/>
      
     </div>
   );
