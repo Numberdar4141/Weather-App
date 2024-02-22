@@ -9,6 +9,8 @@ import PassStreng from './Component/PassStreng';
 import Minicalender from './Component/Minicalender';
 import Notfiy from './Component/Notfiy';
 import Popupnotif from './Component/Popupnotif';
+import Dolist from './Component/Dolist';
+import AgeCalcul from './Component/AgeCalcul';
 
 function App() {
 
@@ -23,7 +25,8 @@ function App() {
 <Minicalender/>
 <Notfiy/>
 <Popupnotif/>
-     
+<Dolist/>
+<AgeCalcul/>
     </div>
   );
 }
