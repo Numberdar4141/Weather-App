@@ -11,6 +11,7 @@ import Notfiy from './Component/Notfiy';
 import Popupnotif from './Component/Popupnotif';
 import Dolist from './Component/Dolist';
 import AgeCalcul from './Component/AgeCalcul';
+import Quoute from './Component/Quoute';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
 <Popupnotif/>
 <Dolist/>
 <AgeCalcul/>
+<Quoute/>
     </div>
   );
 }
